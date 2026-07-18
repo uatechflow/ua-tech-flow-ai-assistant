@@ -4,6 +4,7 @@
 const express = require("express");
 const cors = require("cors");
 const path = require("path");
+const searchRouter = require("./routes/search");
 require("dotenv").config();
 
 const app = express();
@@ -16,6 +17,9 @@ app.use(express.json());
 
 // Serve frontend files
 app.use(express.static(path.join(__dirname, "public")));
+
+// API routes
+app.use("/api", searchRouter);
 
 // Health check endpoint
 app.get("/api/health", (req, res) => {
