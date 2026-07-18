@@ -1,28 +1,33 @@
-// routes/search.js
-// Search API routes for UA TECH FLOW AI Assistant
+// routes/search.js — API endpoint for unified search
 
 const express = require("express");
-
 const router = express.Router();
 
-// Temporary search endpoint
-// Real aggregation logic will be added in utils/aggregator.js
+const { aggregateResources } = require("../utils/aggregator");
 
-router.get("/search", async (req, res) => {
-  const query = req.query.q || "";
+// GET /api/search?q=...&category=...
+router.get("/", async (req, res) => {
+  const q = req.query.q || "";
+  const category = req.query.category || "all";
 
-  res.json({
-    success: true,
-    query: query,
-    results: [
-      {
-        title: "Example education resource",
-        description: "Temporary test result",
-        category: "education",
-        source: "UA TECH FLOW"
-      }
-    ]
-  });
+  try {
+    const results = await aggregateResources(q, category);
+
+    res.json({
+      success: true,
+      count: results.length,
+      results
+    });
+
+  } catch (error) {
+    console.error("Search error:", error.message);
+
+    res.status(500).json({
+      success: false,
+      message: "Search failed. Please try again later.",
+      results: []
+    });
+  }
 });
 
 module.exports = router;

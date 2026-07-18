@@ -19,7 +19,7 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, "public")));
 
 // API routes
-app.use("/api", searchRouter);
+app.use("/api/search", searchRouter);;
 
 // Health check endpoint
 app.get("/api/health", (req, res) => {
