@@ -7,6 +7,8 @@ const path = require("path");
 const searchRouter = require("./routes/search");
 require("dotenv").config();
 
+const { syncNews } = require('./utils/newsSync');
+
 const app = express();
 
 const PORT = process.env.PORT || 3000;
@@ -34,3 +36,11 @@ app.get("/api/health", (req, res) => {
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
 });
+syncNews()
+  .then(() => {
+    console.log('News cache synchronized');
+  })
+  .catch((error) => {
+    console.warn('News sync failed:', error.message);
+  });
+  

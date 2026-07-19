@@ -144,3 +144,6 @@ vite.config.ts.timestamp-*
 
 # VS Code Local History
 .history/
+
+# Runtime cache
+data/*.json
