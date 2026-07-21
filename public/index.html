@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="UA TECH FLOW opportunities for education, jobs and technology.">
+  <title>UA TECH FLOW</title>
+  <!-- Favicon -->
+  <link rel="icon" href="/static/ua_tech_flow_logo.webp" type="image/webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+  <script src="/script.js" defer></script>
+</head>
+<body>
+  <!-- ===== HEADER ===== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <!-- Logo – left -->
+      <button class="brand" type="button" data-view-target="home" aria-label="Go to home page">
+        <span class="logo-placeholder" aria-hidden="true">
+          <img src="/static/ua_tech_flow_logo.webp" alt="" onerror="this.hidden = true; this.nextElementSibling.hidden = false;">
+          <span hidden>UA</span>
+        </span>
+        <span>UA TECH FLOW</span>
+      </button>
+
+      <!-- Navigation – center -->
+      <nav class="main-nav" aria-label="Main navigation">
+        <button type="button" data-view-target="home">Home</button>
+        <button type="button" data-view-target="about">About</button>
+        <button type="button" data-view-target="news">News</button>
+        <button type="button" data-view-target="contact">Contact</button>
+        <button type="button" data-view-target="career-assistant">AI Career Assistant</button>
+      </nav>
+
+      <!-- Search – right -->
+      <div class="search-header">
+        <form id="search-form" class="search-form-header" novalidate>
+          <label for="search-input" class="search-label-header">Quick Search</label>
+          <div class="search-controls-header">
+            <input id="search-input" name="query" type="search" placeholder="C++" autocomplete="off">
+            <select id="category-select" name="category" aria-label="Opportunity category">
+              <option value="jobs" selected>Jobs</option>
+              <option value="education">Education</option>
+              <option value="all">All</option>
+            </select>
+            <button class="button button-primary" type="submit">Search</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== MAIN CONTENT ===== -->
+  <main class="container site-main">
+    <!-- HOME VIEW -->
+    <section class="view" data-view="home" aria-labelledby="home-title">
+      <!-- Hero block -->
+      <div class="hero">
+        <p class="eyebrow">Education · Jobs · Technology</p>
+        <h1 id="home-title">Find education, jobs and technology opportunities</h1>
+        <p class="hero-copy">Explore opportunities and resources for your next step worldwide.</p>
+      </div>
+
+      <!-- AI Career Assistant (home preview) -->
+      <section class="section-block feature-section main-assistant" aria-labelledby="assistant-preview-title">
+        <article class="assistant-preview panel panel-accent">
+          <p class="eyebrow">Plan your next step</p>
+          <h2 id="assistant-preview-title">AI Career Assistant</h2>
+          <p class="assistant-description">Tell us about yourself and discover possible career directions, skills and opportunities.</p>
+          <form id="assistant-preview-form" class="assistant-form">
+            <label for="assistant-preview-input">Your profile</label>
+            <textarea id="assistant-preview-input" rows="5" placeholder="Example:&#10;I am a mechanical engineer from Ukraine.&#10;I live in Switzerland.&#10;I want to switch to IT."></textarea>
+            <button class="button button-primary button-large" type="submit">Analyze Career Opportunities</button>
+          </form>
+          <div id="assistant-preview-response" class="assistant-response" role="status" aria-live="polite"></div>
+        </article>
+      </section>
+
+      <!-- Latest News -->
+      <section class="section-block" aria-labelledby="latest-news-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Stay informed</p>
+            <h2 id="latest-news-title">Latest news</h2>
+          </div>
+          <button class="button button-secondary" type="button" data-view-target="news">View all news</button>
+        </div>
+        <div id="home-news" class="card-grid news-grid"></div>
+      </section>
+
+      <!-- Social and contact (with logo images) -->
+      <section class="section-block feature-section" aria-labelledby="home-contact-title">
+        <article class="social-panel panel">
+          <p class="eyebrow">Stay connected</p>
+          <h2 id="home-contact-title">Social and contact</h2>
+          <p>Follow UA TECH FLOW and connect with the project through the channels below.</p>
+          <div class="social-links" aria-label="Social networks">
+            <!-- Telegram -->
+            <a href="https://t.me/uatechflow" target="_blank" rel="noopener noreferrer" aria-label="Telegram">
+              <img src="/static/Telegram_Logo.svg" alt="Telegram" class="social-icon">
+            </a>
+            <!-- LinkedIn -->
+            <a href="https://www.linkedin.com/company/ua-tech-flow" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+              <img src="/static/InBug-White.png" alt="LinkedIn" class="social-icon">
+            </a>
+            <!-- Facebook -->
+            <a href="https://www.facebook.com/profile.php?id=61576737877788" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+              <img src="/static/Facebook_Logo_Primary.png" alt="Facebook" class="social-icon">
+            </a>
+            <!-- YouTube -->
+            <a href="https://www.youtube.com/@uatechflow-e6p" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+              <img src="/static/yt_icon_red_digital.png" alt="YouTube" class="social-icon">
+            </a>
+            <!-- X -->
+            <a href="https://x.com/uatechflow" target="_blank" rel="noopener noreferrer" aria-label="X">
+              <img src="/static/logo-black.png" alt="X" class="social-icon">
+            </a>
+          </div>
+        </article>
+      </section>
+    </section>
+
+    <!-- RESULTS VIEW -->
+    <section class="view" data-view="results" aria-labelledby="results-page-title" hidden>
+      <p class="eyebrow">Home / Search / Results</p>
+      <h1 id="results-page-title">Search results</h1>
+      <p id="message" class="status-message" role="status" aria-live="polite" hidden></p>
+      <section id="results" class="results" aria-live="polite" aria-label="Search results"></section>
+      <button class="button button-secondary" type="button" data-view-target="home">Back to home</button>
+    </section>
+
+    <!-- NEWS VIEW (full list – same card style as home) -->
+    <section class="view" data-view="news" aria-labelledby="news-page-title" hidden>
+      <p class="eyebrow">Updates from UA TECH FLOW</p>
+      <h1 id="news-page-title">News</h1>
+      <p id="news-message" class="status-message" role="status" aria-live="polite" hidden></p>
+      <div id="news-list" class="card-grid news-grid"></div>
+    </section>
+
+    <!-- NEWS DETAIL VIEW -->
+    <section class="view" data-view="news-detail" aria-labelledby="news-detail-title" hidden>
+      <button class="button button-secondary" type="button" data-view-target="news">Back to news</button>
+      <article id="news-detail-content" class="news-detail"></article>
+    </section>
+
+    <!-- CAREER ASSISTANT FULL PAGE -->
+    <section class="view content-view" data-view="career-assistant" aria-labelledby="assistant-title" hidden>
+      <p class="eyebrow">Prepare your next step</p>
+      <h1 id="assistant-title">AI Career Assistant</h1>
+      <p>Ask a career question and keep your conversation in one place.</p>
+      <form id="assistant-form" class="assistant-form">
+        <label for="assistant-input">Your question</label>
+        <textarea id="assistant-input" rows="5" placeholder="Tell us what kind of support you need."></textarea>
+        <button class="button button-primary" type="submit">Send question</button>
+      </form>
+      <section id="assistant-response" class="assistant-response" aria-live="polite" aria-label="AI response area"></section>
+      <section aria-labelledby="conversation-title">
+        <h2 id="conversation-title">Conversation history</h2>
+        <div id="conversation-history" class="conversation-history"></div>
+      </section>
+    </section>
+
+    <!-- ABOUT VIEW -->
+    <section class="view content-view" data-view="about" aria-labelledby="about-title" hidden>
+      <p class="eyebrow">About the project</p>
+      <h1 id="about-title">About UA TECH FLOW</h1>
+      <div class="content-grid">
+        <article><h2>Mission</h2><p>Make education, employment and technology opportunities easier to discover for newcomers worldwide.</p></article>
+        <article><h2>Technology</h2><p>UA TECH FLOW connects opportunity data through a unified search experience and a simple, accessible frontend.</p></article>
+        <article><h2>Team</h2><p>A community-oriented team building practical digital tools for people starting a new chapter.</p></article>
+      </div>
+    </section>
+
+    <!-- CONTACT VIEW -->
+    <section class="view content-view" data-view="contact" aria-labelledby="contact-title" hidden>
+      <p class="eyebrow">Connect with us</p>
+      <h1 id="contact-title">Contact</h1>
+      <div class="content-grid contact-grid">
+        <article><h2>Contact information</h2><p>Email and project contact details will be added here.</p></article>
+        <article><h2>Social networks</h2>
+          <div class="social-links" aria-label="Social networks">
+            <a href="https://t.me/uatechflow" target="_blank" rel="noopener noreferrer">Telegram</a>
+            <a href="https://www.linkedin.com/company/ua-tech-flow" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="https://www.facebook.com/profile.php?id=61576737877788" target="_blank" rel="noopener noreferrer">Facebook</a>
+            <a href="https://www.youtube.com/@uatechflow-e6p" target="_blank" rel="noopener noreferrer">YouTube</a>
+            <a href="https://x.com/uatechflow" target="_blank" rel="noopener noreferrer">X</a>
+          </div>
+        </article>
+        <article><h2>Messenger</h2><p>Messenger support information will be added here.</p></article>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <span class="footer-brand">UA TECH FLOW</span>
+      <div class="footer-links" aria-label="Footer social links">
+        <a href="https://t.me/uatechflow" target="_blank" rel="noopener noreferrer">Telegram</a>
+        <a href="https://www.linkedin.com/company/ua-tech-flow" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://www.facebook.com/profile.php?id=61576737877788" target="_blank" rel="noopener noreferrer">Facebook</a>
+        <a href="https://www.youtube.com/@uatechflow-e6p" target="_blank" rel="noopener noreferrer">YouTube</a>
+        <a href="https://x.com/uatechflow" target="_blank" rel="noopener noreferrer">X</a>
+        <a href="mailto:info@uatechflow.org">Email</a>
+      </div>
+      <span>© <span id="copyright-year"></span> UA TECH FLOW</span>
+    </div>
+  </footer>
+</body>
+</html>

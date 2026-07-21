@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Search Results - UA TECH FLOW</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="/">
+        <span class="logo-placeholder" aria-hidden="true">
+          <img src="/ua_tech_flow_logo.webp" alt="" onerror="this.hidden = true; this.nextElementSibling.hidden = false;">
+          <span hidden>UA</span>
+        </span>
+        <span>UA TECH FLOW</span>
+      </a>
+      <nav class="main-nav">
+        <a href="/">Home</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container site-main">
+    <section class="view" data-view="search-results">
+      <p class="eyebrow">Search results</p>
+      <h1 id="results-title">Results for "<span id="query-display"></span>"</h1>
+      <div id="search-results-container"></div>
+      <p><a href="/" class="button button-secondary">← Back to home</a></p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <span class="footer-brand">UA TECH FLOW</span>
+      <div class="footer-links"><a href="#">Telegram</a><a href="#">LinkedIn</a><a href="#">Facebook</a><a href="#">YouTube</a><a href="#">X</a></div>
+      <span>© <span id="copyright-year"></span> UA TECH FLOW</span>
+    </div>
+  </footer>
+
+  <script src="/search.js"></script>
+</body>
+</html>

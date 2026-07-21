@@ -5,6 +5,7 @@ const express = require("express");
 const cors = require("cors");
 const path = require("path");
 const searchRouter = require("./routes/search");
+const newsRouter = require("./routes/news");
 require("dotenv").config();
 
 const { syncNews } = require('./utils/newsSync');
@@ -22,6 +23,7 @@ app.use(express.static(path.join(__dirname, "public")));
 
 // API routes
 app.use("/api/search", searchRouter);;
+app.use("/api/news", newsRouter);
 
 // Health check endpoint
 app.get("/api/health", (req, res) => {

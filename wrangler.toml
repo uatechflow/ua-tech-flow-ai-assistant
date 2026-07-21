@@ -1,0 +1,17 @@
+name = "ua-tech-flow-ai-assistant"
+main = "worker.js"
+compatibility_date = "2026-01-14"
+
+assets = { directory = "./public", binding = "ASSETS" }
+
+workers_dev = false
+
+routes = [
+  { pattern = "aica.uatechflow.org", custom_domain = true }
+]
+
+# Якщо потрібно перевизначити URL зовнішніх API – можна додати змінні
+# [vars]
+# JOB_ADVISOR_URL = "https://job.uatechflow.org/process"
+# EDU_API_URL = "https://edu.uatechflow.org/api/opportunities"
+# NEWS_API_URL = "https://uatechflow.org/api/news"
